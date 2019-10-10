@@ -1,17 +1,12 @@
-var url = "https://ghibliapi.herokuapp.com/films";
-d3.json("url", function(json))
 
+d3.json("https://ghibliapi.herokuapp.com/films")
+var filPromise=d3.json("https://ghibliapi.herokuapp.com/films");
 filPromise.then(
 function(data)
     {
         nlist(name);
-        
-
-    
     console.log("works",data);
-    }
-
-)
+    })
 
 
 
@@ -22,10 +17,10 @@ function(data)
 
 
 
-var nlist = function (name)
+var function = nlist(name)
 {
     var movies = d3.select("body")
-    .append"ol"
+    .append("ol")
     .selectAll("li")
     .data(name)
     .enter()
@@ -33,7 +28,4 @@ var nlist = function (name)
     .append("span")
     .text (function(d)
           {return d.title})
-    
-}
-
-
+    }
