@@ -29,10 +29,13 @@ var nlist = function(data)
     .data(data)
     .enter()
     .append("li")
+    .on ("mouseover", function(data))
+    {
     .append("div")
     .attr("class" ,"films")
-.text (function(d)
+    .text (function(data)
           {return d.title})
+         }
     }
 
 var infodes = function(data)
