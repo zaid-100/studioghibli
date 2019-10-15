@@ -5,26 +5,27 @@ filPromise.then(
 function(data)
     {
         nlist(data);
-        //movtitle(data);
-        /*infodes(data);
-        infodir(data);
-        infopro(data);
-        inforel(data);*/
+        titlee(data);
+        //infodes(data);
+        //infodir(data);
+        //infopro(data);
+        //inforel(data);
     console.log("works",data);
     })
 
 
 var nlist = function(data)
 {
-    var movies = d3.select("body")
-    .append("ol")
-    .selectAll("li")
+    d3.select("body")
+    .append("ol").attr ("id", "movieOl");
+    
+    d3.select("#movieOl").selectAll("li")
     .data(data)
     .enter()
     .append("li")
     .append("div")
     .attr("class" ,"films")
-     .on("mouseover" , function(d)
+    .on("click" , function(d)
         {makeWhole(d, d3.select(this))
      })
     .on("mouseout", function(d)
@@ -32,6 +33,13 @@ var nlist = function(data)
         makeSmall(d,d3.select(this))
     })
 } 
+
+var maketitle = function(movie) 
+{
+
+    
+}
+
 var makeWhole= function(movie, div) 
 {
    div.selectAll("*").remove()
@@ -42,14 +50,29 @@ var makeWhole= function(movie, div)
 
     div
     .append("div").attr("class", "infodes")
-.text (function(d) {return "Description: " + d.description}
-)}
+.text (function(d) {return "Description: " + d.description})
+    
+    div
+     .append("div").attr("class", "infodir")
+.text(function(d) {return "Director: " + d.director})
+    
+    div
+    
+    .append("div").attr("class", "infopro")
+.text(function(d) {return "Producer: " + d.producer})
+    
+    div
+        .append("div").attr("class", "inforel")
+.text(function(d) {return "Release Date: " + d.release_date})
+}
 
-var makeSmall = function(movie, div)
+
+
+var makeSmall = function(div)
 {
     div.selectAll("*").remove()
     
-    movtitle(div)
+    
 }
 
 var allmovies = function(movies)
@@ -95,31 +118,10 @@ var inforel = function(data)
     
 
 }
+var titlee = function(data)
+{
+    d3.selectAll(".films").append("div").attr("class","title")
+    .text(function(d) {return d.title})
+}
 
-
-
-
-
-d3.json("https://ghibliapi.herokuapp.com/people/")
-var filPromise=d3.json("https://ghibliapi.herokuapp.com/people/");
-filPromise.then(
-function(data)
-    {
-        displaypeople(data)
-        console.log("gothere")
-    })
-
-var displaypeople = function(data)
-    { 
-        d3.select("film")
-        .data(data)
-        .enter()
-        .append("div")
-        .attr("class", "people")
-        .text(function(data) {return data.name})
-    }
-    
-    
-    
-    
     

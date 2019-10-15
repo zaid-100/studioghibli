@@ -1,8 +1,4 @@
-<html>
-    <head>
-     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <style>
-        body {
+ body {
         font-family: sans-serif;
             font-size: 20px;
             width:1600px;
@@ -21,7 +17,7 @@
                background-color:E82E40;
                margin-bottom: 2px;
             font-size: 40px;
-              height: 60px;
+              height: 100px;
                
         }
         
@@ -55,39 +51,4 @@
         .button {
             background-color: antiquewhite;
         }
-        
-        .title {
-     Height: auto;
-               background-color:E82E40;
-               margin-bottom: 2px;
-            font-size: 40px;
-              height: 60px;
-        
-        }
-      
-        </style>
-    </head>
-    <body>
-    <title> Studio Ghibli Movies </title>
-    <h1> Studio Ghibli Movies </h1>
-    <h2>Click Titles for More Information</h2>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    <script src="Code.js"> </script>
-    </body>
-    
-    
-</html>
+       
